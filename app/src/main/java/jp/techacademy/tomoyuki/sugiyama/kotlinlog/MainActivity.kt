@@ -10,14 +10,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val human = Human("朋之", 25,"テニス")      // 名前を達也、年齢18歳で、humanのインスタンスを作る
+        val human = Human("たかし", 14,"演劇")      // 名前を朋之、年齢25歳で、humanのインスタンスを作る
 
         human.say()
-        Log.d("kotlintest", "私の名前は" + human.name + "です。")
-        Log.d("kotlintest", "年は" + human.age + "歳です。")
-
         human.think()
-        Log.d("kotolintest","「私は" + human.hobby + "について考える。」")
+
+        val human2 = Human("ひろし",31,"釣り")
+
+        human2.say()
+        human2.think()
 
     }
 }

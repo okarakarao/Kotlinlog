@@ -2,20 +2,21 @@ package jp.techacademy.tomoyuki.sugiyama.kotlinlog
 
 import android.util.Log
 
-open class Human:Animal{
+open class Human:Animal,Thinkable{
+    //プロパティ
+    var hobby:String
 
     //引数付きコンストラクタ
-    constructor(name:String,age:Int,hobby:String):super(name,age,hobby){
+    constructor(name:String,age:Int,hobby:String):super(name,age){
+        this.hobby = hobby
     }
 
-    //Animalクラスのメソッドをオーバーライド
-    override fun say(){
-        Log.d("kotlintest","「私の名前は"+this.name+"です。年は"+this.age+"です。」")
-
+    override fun say() {
+        Log.d("kotlintest","「私の名前は"+this.name+"です。年は"+this.age+"歳です。」")
     }
-    //thinkの実装
-    fun think(){
-        Log.d("kotlintest","「私は" + this.hobby + "について考える。」")
+
+    override fun think() {
+        Log.d("kotlintest","「私は"+this.hobby+"について考える」")
     }
 
 }
